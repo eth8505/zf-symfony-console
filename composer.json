@@ -1,0 +1,24 @@
+{
+	"name": "eth8505/zf-symfony-console",
+	"description": "symfony/console module for zendframework3+",
+	"keywords": ["zf3", "zend", "sf3", "symfony", "console"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "eth8505",
+			"email": "jan_simon_w@arcor.de"
+		}
+	],
+	"require": {
+		"symfony/console": "~3.3",
+		"zendframework/zend-mvc": "~3.0",
+		"zendframework/zend-servicemanager": "~3.0",
+		"zendframework/zend-stdlib": "~3.0"
+	},
+	"autoload": {
+		"psr-0": {
+			"Eth8505\\ZfSymfonyConsole\\": "src/"
+		}
+	},
+	"bin": ["bin/console"]
+}
