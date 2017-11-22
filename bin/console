@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+    use Zend\Mvc\Application;
+
+    require 'vendor/autoload.php';
+    $app = require 'public/index.php';
+
+    if (empty($app) || !($app instanceof Application)) {
+    echo 'Application not returned from index.php';
+}
+
+    $app->getServiceManager()
+        ->get('Eth8505\\ZfSymfonyConsole\\Application')
+        ->run();

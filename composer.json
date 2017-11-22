@@ -16,7 +16,7 @@
 		"zendframework/zend-stdlib": "~3.0"
 	},
 	"autoload": {
-		"psr-0": {
+		"psr-4": {
 			"Eth8505\\ZfSymfonyConsole\\": "src/"
 		}
 	},
