@@ -1,14 +1,22 @@
 <?php
+/**
+ * @copyright 2017 Jan-Simon Winkelmann <winkelmann@blue-metallic.de>
+ * @license MIT
+ */
 
-    namespace Eth8505\ZfSymfonyConsole;
+namespace Eth8505\ZfSymfonyConsole;
 
-    interface ConsoleCommandProviderInterface {
+/**
+ * Hinting interface for configuration of console commands via module classes
+ */
+interface ConsoleCommandProviderInterface
+{
 
-        /**
-         * Get rest action delegator config
-         *
-         * @return array
-         */
-        public function getConsoleCommandConfig();
+    /**
+     * Get console command config
+     *
+     * @return array
+     */
+    public function getConsoleCommandConfig();
 
-    }
+}

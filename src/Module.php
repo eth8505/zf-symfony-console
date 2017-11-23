@@ -1,19 +1,24 @@
 <?php
+/**
+ * @copyright 2017 Jan-Simon Winkelmann <winkelmann@blue-metallic.de>
+ * @license MIT
+ */
 
 namespace Eth8505\ZfSymfonyConsole;
 
-use Eth8505\ZfSymfonyConsole\Command\CacheClear;
-use Eth8505\ZfSymfonyConsole\Command\Factory\CacheClearFactory;
 use Eth8505\ZfSymfonyConsole\Factory\ApplicationFactory;
+use Eth8505\ZfSymfonyConsole\Factory\ConsoleCommandManagerFactory;
 use Interop\Container\ContainerInterface;
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\InitProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\ModuleManager\Listener\ServiceListener;
 use Zend\ModuleManager\ModuleManager;
 use Zend\ModuleManager\ModuleManagerInterface;
 
-class Module implements ConfigProviderInterface, InitProviderInterface, ServiceProviderInterface, ConsoleCommandProviderInterface
+/**
+ * ZF3 Symfony console module class
+ */
+class Module implements InitProviderInterface, ServiceProviderInterface
 {
 
     /**
@@ -39,29 +44,12 @@ class Module implements ConfigProviderInterface, InitProviderInterface, ServiceP
     /**
      * @inheritdoc
      */
-	public function getConfig()
-	{
-		return include __DIR__ . '/../config/module.config.php';
-	}
-
-    /**
-     * @inheritdoc
-     */
     public function getServiceConfig() {
 
 	    return [
 	        'factories' => [
-	            'Eth8505\\ZfSymfonyConsole\\Application' => ApplicationFactory::class
-            ]
-        ];
-
-    }
-
-    public function getConsoleCommandConfig() {
-
-        return [
-            'factories' => [
-                CacheClear::class => CacheClearFactory::class
+	            'Eth8505\\ZfSymfonyConsole\\Application' => ApplicationFactory::class,
+                ConsoleCommandManager::class => ConsoleCommandManagerFactory::class
             ]
         ];
 

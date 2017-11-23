@@ -1,35 +1,38 @@
 <?php
+/**
+ * @copyright 2017 Jan-Simon Winkelmann <winkelmann@blue-metallic.de>
+ * @license MIT
+ */
 
 namespace Eth8505\ZfSymfonyConsole;
 
-use Eth8505\ZfSymfonyConsole\Command\CommandInterface;
+use Symfony\Component\Console\Command\Command;
 use Zend\ServiceManager\AbstractPluginManager;
 
+/**
+ * Plugin manager for console commands
+ */
 class ConsoleCommandManager extends AbstractPluginManager
-{P
+{
 
     /**
+     * Base class must be symfony console command
+     *
      * @var string
      */
-    protected $instanceOf = CommandInterface::class;
-
-    public function __construct($configInstanceOrParentLocator = NULL, array $config = []) {
-
-        $this->initializers[] = [$this, 'registerWithConsole'];
-        parent::__construct($configInstanceOrParentLocator, $config);
-
-
-
-    }
+    protected $instanceOf = Command::class;
 
     /**
-     * Inject a helper instance with the registered renderer
+     * Create all commands and return as generator
      *
-     * @param CommandInterface $command
+     * @return \Generator|Command[]
      */
-    public function registerWithConsole(CommandInterface $command) {
+    public function createAllCommands(): \Generator
+    {
 
-        die('initialize');
+        foreach ($this->factories AS $serviceName => $factoryName) {
+            yield $this->get($serviceName);
+        }
 
     }
 
