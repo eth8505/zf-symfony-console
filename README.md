@@ -18,7 +18,7 @@ Load the module in your `application.config.php` file like so:
 
 return [
 	'modules' => [
-		'Eth8585\ZfSymfonyConsole\\',
+		'Eth8505\ZfSymfonyConsole\\',
 		// ...
 	],
 ];
