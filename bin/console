@@ -12,6 +12,7 @@ $app = require 'public/index.php';
 
 if (empty($app) || !($app instanceof Application)) {
     echo 'Application not returned from index.php';
+	exit;
 }
 
 $app->getServiceManager()
