@@ -3,7 +3,7 @@ Eth8585\ZfSymfonyConsole - Zend Framework 3 Symfony Console Module
 
 The **Eth8585\ZfSymfonyConsole** module allows to use the symfony console component with Zend Framework 3.
 
-## Hot to install
+## How to install
 
 Install `eth8505/zf-symfony-console` package via composer.
 
