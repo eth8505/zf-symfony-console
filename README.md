@@ -29,6 +29,14 @@ return [
 You can use the `vendor/bin/console` tool to run your commands. This tool may be in a different directory depending on 
 how your composers `bin-dir` is configured.
 
+Depending on how you did setup your Zend Framework 3 project, you might need to modify `public/index.php`.
+For example this is neccassary if you did use the Zend MVC Skeleton project.
+
+Firstly that file has to return the `Application` instance for this library to work.
+
+Optionally you might only invoke the `run()` method of `Zend\Mvc\Application` if `public/index.php` has not
+been called via the PHP CLI. This will avoid cluttering up your console with the view.
+
 ## How do I create console commands?
 
 ### 1. Create command
