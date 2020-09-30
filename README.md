@@ -1,3 +1,5 @@
+!!!! THIS PACKAGE IS NO LONGER MAINTAINED, PLEASE USE eth8505/laminas-symfony-console INSTEAD !!!!
+
 Eth8585\ZfSymfonyConsole - Zend Framework 3 Symfony Console Module
 ==================================================================
 
